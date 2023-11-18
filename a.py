@@ -14,10 +14,10 @@ def index():
 @app.route('/transfer', methods=['POST'])
 def transfer():
     token = request.form.get('token', '')
-    if token == '123':
-        user_id = request.form.get('user_id', '')
-        amount = int(request.form.get('amount', 0))
-        user_balances[user_id] -= amount
+    #if token == '123':
+    user_id = request.form.get('user_id', '')
+    amount = int(request.form.get('amount', 0))
+    user_balances[user_id] -= amount
     return redirect('/')
 
 if __name__ == '__main__':
